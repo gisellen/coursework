@@ -1,21 +1,12 @@
 /*
 CSC 326
-LAB 5
+lab 6  
 
-
-PURPOSE 
-
-Coverting hex into decimal and back into hex again.  
-
-The input (Data.txt) consists of any Hex
-number that will be converted.  
-
-The output will show the decimal version of the hex and show the hex
-again after its converted from the decimal.  This conversion is more visable within the code itself.
-
+PURPOSE
+This is a modification of lab 5.  In this lab, it will covert the hex in to decimal and back into hex again then output the hex.
+The input will be the same as lab 5.
 */
 
-//preprocessors
 #include <iostream> 
 #include <fstream> 
 #include <iomanip> 
@@ -24,32 +15,33 @@ using namespace std;
 
 
 //declaring prototypes
-int calc(string);
-int convertToDec(char);
-void DtoH(int);
-char convertToHex(int);
+int calc(string); //calculates the decimal number of the hex
+int convertToDec(char); //converts the hex to decimal
+void DtoH(int); //converts the decimal into hex
+char convertToHex(int); //this will convert decimal into its hex form
 
+//main
 int main()
 {
-    //declaring and initializing variables
+	//declaring and initializing variables
 	int sum;
 	ifstream infile;
-	infile.open("Data.txt");
+	infile.open("Text.txt");
 	if (infile.fail()) {
 		cout << "This file cannot be opened." << endl;
 	}
 	string hex;
-   
-    // inputs and outputs
 	infile >> hex;
+
+	//output
 	cout << "The original hex is: " << hex << endl;
 	sum = calc(hex);
 	cout << "The decimal of this hex is: " << sum << endl;
-	cout << "The Hex (converted back) of this is: ";
+	cout << "The Hexidecimal equivalent of this is: ";
 	DtoH(sum);
 }
 
-int calc(string hex) {  //this function will calclate the decimal number of the hex
+int calc(string hex) { //calculate the decimal number of the hex
 	int n = hex.length();
 	int i, sum = 0;
 	int b = 0;
@@ -59,25 +51,7 @@ int calc(string hex) {  //this function will calclate the decimal number of the 
 	}
 	return sum;
 }
-
-
-void DtoH(int sum) { //this function will convert deciment to hex
-	int remainder[100], i = 0;
-	int count = 0;
-	string hex;
-	while (sum != 0) {
-		remainder[count] = sum % 16;
-		sum = sum / 16;
-		count++;
-	}
-	for (int a = count - 1; a >= 0; a--) {
-		cout << convertToHex(remainder[a]);
-	}
-
-}
-
-
-int convertToDec(char a) { //this function will calculate the decimal number based on the hex given
+int convertToDec(char a) { //converts the hex to decimal
 	switch (a) {
 	case '0':
 		return 0;
@@ -130,8 +104,7 @@ int convertToDec(char a) { //this function will calculate the decimal number bas
 	}
 
 }
-
-char convertToHex(int a) { //based on the decimal, this will convert the decimal to hex individualy
+char convertToHex(int a) { //converts the decimal to hex
 	switch (a) {
 	case 0:
 		return '0';
@@ -182,4 +155,14 @@ char convertToHex(int a) { //based on the decimal, this will convert the decimal
 		return 'F';
 		break;
 	}
+}
+
+void DtoH(int sum1) { //combines the decimal to its full hex form
+	int remainder;
+	remainder = sum1 % 16;
+	sum1 = sum1 / 16;
+	if (sum1 != 0) {
+		DtoH(sum1);
+	}
+	cout << convertToHex(remainder);
 }

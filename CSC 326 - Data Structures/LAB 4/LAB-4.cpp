@@ -1,7 +1,11 @@
 /*
 // csc 326   
-// lab 4: using dynamic storage allocation    
+// lab 4    
 /* 
+PURPOSE
+The purpose of this lab is to be able to learn how to use dynamic storage allocation.
+It will output the array using a pointer and the pointer will sort the same array and output that.
+
 === output === 
 how many grades are you inputting? 
 5 
