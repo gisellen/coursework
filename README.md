@@ -4,6 +4,8 @@ A repository compiling all of my labs/projects I have done in Univeristy.  There
 
 C++: CSC 126, CSC 211, & CSC 326
 
+PHP: CSC 226
+
 Assembly: CSC 220
 
 Java: CSC 330
