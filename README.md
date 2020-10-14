@@ -6,6 +6,8 @@ C++: CSC 126, CSC 211, & CSC 326
 
 Assembly: CSC 220
 
+Java: CSC 330
+
 Other projects done for learning:
 
 - https://devpost.com/software/food-hunter
