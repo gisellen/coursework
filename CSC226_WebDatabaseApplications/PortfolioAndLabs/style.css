@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
+.title{
+    margin: 20px 10px;
+    top: 200px;
+    padding: 10px;
+    font-size: 50px;
+    color: #153243; 
+    font-family: 'Bungee Shade', sans-serif;
+    animation: MoveLoad 1.4s;
+    text-align: center;
+    position: relative;
+}
+.center{
+    margin: 20px 10px;
+    top:200px;
+    position: relative;
+    animation: MoveLoad 1.4s;
+}
+.center2{
+    position: relative;
+}
+#border{
+    border: 1;
+    border-color: black;
+    margin:20px;
+    padding:20px;
+}
+#textbox{
+    padding: 0px 100px;
+}
+#desc{
+    top:180px;
+}
+p, ul, a{
+    font-size: 12px;
+    text-align: center;
+}
+a{
+    font-size: 15px;
+    color:#153243;
+}
+a:hover{
+    color: red;
+}
+@keyframes MoveLoad{
+    from{
+        top: 0px;
+        padding: 0px;
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+        position: relative;
+    }
+}
